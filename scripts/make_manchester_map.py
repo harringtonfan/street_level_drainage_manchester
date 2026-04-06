@@ -40,33 +40,33 @@ def main() -> None:
     fig, ax = plt.subplots(figsize=(20, 12))
 
     soil_impeded.plot(
-        ax=ax,
-        color="#c7dbee",
-        edgecolor="none",
-        alpha=0.66,
-        zorder=1
-    )
+    ax=ax,
+    color="#cfdfef",
+    edgecolor="none",
+    alpha=0.58,
+    zorder=1
+)
 
     gdf_impeded.plot(
-        ax=ax,
-        color="#2b6cb0",
-        linewidth=0.60,
-        alpha=0.98,
-        zorder=2
-    )
+    ax=ax,
+    color="#1f5fa8",
+    linewidth=0.68,
+    alpha=1.0,
+    zorder=2
+)
 
     xmin, ymin, xmax, ymax = gdf_impeded.total_bounds
     ax.set_xlim(xmin, xmax)
     ax.set_ylim(ymin, ymax)
 
     ctx.add_basemap(
-        ax,
-        crs=gdf_impeded.crs,
-        source=ctx.providers.CartoDB.Positron,
-        attribution=False,
-        zoom=12,
-        zorder=0
-    )
+    ax,
+    crs=gdf_impeded.crs,
+    source=ctx.providers.CartoDB.Positron,
+    attribution=False,
+    zoom=12,
+    zorder=0
+)
 
     ax.text(
     0.012,
