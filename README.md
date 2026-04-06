@@ -6,7 +6,7 @@ This project links OS Open USRN street segments to National Soil Map soil draina
 
 ## Project Question
 
-How can polygon-based soil drainage data be translated into street-segment-level network information for urban infrastructure analysis?
+Which parts of Manchester’s road network are located in areas with impeded drainage conditions, and how might this matter for infrastructure planning and maintenance?
 
 ## Overview
 
@@ -22,7 +22,8 @@ Manchester, using a Manchester-area bounding box within the workflow.
 
 - **OS Open USRN** — street-segment identifiers and line geometries
 - **National Soil Map** — polygon-based soil and drainage attributes
-- Raw input data is not stored in this repository. Place the required GeoPackage files in `input_data/` before running the workflow.
+
+Raw input data is not stored in this repository. Place the required GeoPackage files in `input_data/` before running the workflow.
 
 ## Workflow
 
@@ -36,9 +37,8 @@ Manchester, using a Manchester-area bounding box within the workflow.
 
 ```text
 usrn-matcher/
-├── input_data/                      # raw input GeoPackage files
+├── input_data/                      # local input GeoPackage files (not tracked)
 ├── matched_data/                    # matched outputs and final figures
-├── notebooks/                       # exploratory notebook
 ├── output_data/                     # cached parquet outputs from the workflow
 ├── scripts/                         # Manchester-specific scripts
 ├── usrn_soil_matcher/               # core repository matching code
@@ -66,8 +66,8 @@ usrn-matcher/
 - `matched_data/manchester_impeded_drainage_final.pdf`  
   Vector PDF export of the final figure.
 
-- `notebooks/manchester_repo_map.ipynb`  
-  Exploratory notebook for inspecting outputs and iterating on the map.
+- `manchester_impeded_drainage_preview.png`  
+  Preview image used in the repository homepage.
 
 ## Outputs
 
@@ -95,6 +95,8 @@ python scripts/make_manchester_map.py
 ## Why It Matters
 
 Street networks are often the practical unit through which infrastructure is managed, while environmental data is often published as area-based polygon layers. This project shows how polygon-based drainage information can be translated into street-segment-level outputs that are easier to inspect, map, and potentially use in infrastructure-oriented analysis.
+
+From a public policy perspective, this kind of workflow can help identify where environmental constraints overlap with everyday infrastructure, making it easier to think about road maintenance, local planning, and uneven physical vulnerability across urban space.
 
 ## Notes
 
