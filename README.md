@@ -108,6 +108,14 @@ From a public policy perspective, this kind of workflow can help identify where 
 
 More broadly, the project reflects an interest in building workflows that make complex spatial information more legible and more usable for applied analysis.
 
+## What the Map Shows
+
+The map shows that impeded drainage conditions are not evenly distributed across Manchester’s road network. Instead, they appear in spatially concentrated clusters, with some parts of the network intersecting these conditions much more heavily than others.
+
+This matters for two reasons. First, it shows that a polygon-based environmental layer can be translated into a street-segment-level infrastructure indicator. Second, it suggests that physical environmental constraints are not distributed uniformly across urban space, but overlap with specific parts of the road network in ways that could be more relevant for planning, maintenance, or further investigation.
+
+The map should be read as an indicator of spatial overlap, not as proof of road damage or infrastructure failure. Its main contribution is to identify where impeded drainage conditions and the street network coincide, and to make that overlap easier to interpret at the street level.
+
 ## Notes
 
 This is a Manchester adaptation built on top of the repository’s matching workflow. The final map, project framing, and Manchester-specific application were developed as part of this case study.
