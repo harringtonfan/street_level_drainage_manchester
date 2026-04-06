@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# macOS
+.DS_Store
+
+# Virtual environments
+.venv/
+env/
+venv/
+
+# Raw input data
+input_data/*.gpkg
+
+# Generated caches
+output_data/*.parquet
