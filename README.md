@@ -1,18 +1,26 @@
-# Street-Level Impeded Drainage in Manchester
+# Linking Environmental Constraints to Street-Level Infrastructure: A Manchester Case Study
 
-This project links OS Open USRN street segments to National Soil Map soil drainage attributes in order to identify and map parts of Manchester’s road network associated with impeded drainage conditions.
+This project translates polygon-based environmental data into street-segment-level infrastructure information by linking **OS Open USRN** street segments to **National Soil Map** drainage attributes. Using Manchester as a case study, the project identifies parts of the road network associated with **impeded drainage** conditions and presents the output as a street-level map relevant to infrastructure planning and policy analysis.
 
 ![Manchester impeded drainage map](manchester_impeded_drainage_preview.png)
 
 ## Project Question
 
-Which parts of Manchester’s road network are located in areas with impeded drainage conditions, and how might this matter for infrastructure planning and maintenance?
+Which parts of Manchester’s road network intersect impeded drainage conditions, and how can this kind of street-level spatial attribution support infrastructure planning and policy analysis?
 
 ## Overview
 
-Environmental constraints are often stored as polygon layers, while transport and infrastructure systems are usually managed through network-based identifiers. This project connects those two spatial logics by matching USRN street segments to soil polygons and producing a street-level map of impeded drainage conditions in Manchester.
+Environmental constraints are often stored as polygon layers, while infrastructure systems are more often managed through network-based identifiers such as road segments or street references. This creates a practical mismatch between how environmental information is published and how infrastructure is often understood or managed.
 
-The project uses the `usrn-matcher` workflow as its matching backbone, then applies that workflow to Manchester and reconstructs the mapped output as a standalone case study.
+This project addresses that mismatch by spatially matching **USRN street segments** to **soil polygons** and producing a street-level output for Manchester. The result is a mapped representation of where impeded drainage conditions overlap with the road network, showing how area-based environmental data can be translated into more decision-relevant infrastructure indicators.
+
+The project uses the `usrn-matcher` workflow as its technical backbone, then adapts that workflow to Manchester and reframes the result as a standalone policy-relevant geospatial case study.
+
+## Why This Project
+
+What interested me in this project was not only the map itself, but the broader workflow problem behind it: how to turn complex, heterogeneous spatial data into outputs that are easier to interpret, communicate, and potentially use in planning or maintenance contexts.
+
+In that sense, the project is less about a single map and more about a reproducible method for transforming raw geospatial information into street-level indicators.
 
 ## Study Area
 
@@ -27,7 +35,7 @@ Raw input data is not stored in this repository. Place the required GeoPackage f
 
 ## Workflow
 
-1. Read OS Open USRN and National Soil Map GeoPackage files.
+1. Read **OS Open USRN** and **National Soil Map** GeoPackage files.
 2. Apply a Manchester bounding box to define the study area.
 3. Match street segments to soil polygons using the repository workflow.
 4. Export matched output as a CSV with geometry and soil attributes.
@@ -36,7 +44,7 @@ Raw input data is not stored in this repository. Place the required GeoPackage f
 ## Repository Structure
 
 ```text
-usrn-matcher/
+street_level_drainage_manchester/
 ├── input_data/                      # local input GeoPackage files (not tracked)
 ├── matched_data/                    # matched outputs and final figures
 ├── output_data/                     # cached parquet outputs from the workflow
@@ -94,9 +102,11 @@ python scripts/make_manchester_map.py
 
 ## Why It Matters
 
-Street networks are often the practical unit through which infrastructure is managed, while environmental data is often published as area-based polygon layers. This project shows how polygon-based drainage information can be translated into street-segment-level outputs that are easier to inspect, map, and potentially use in infrastructure-oriented analysis.
+Street networks are often the practical unit through which infrastructure is maintained and interpreted, while environmental information is often distributed as area-based polygon data. This project shows how those two spatial logics can be connected in a way that produces interpretable, street-level outputs.
 
-From a public policy perspective, this kind of workflow can help identify where environmental constraints overlap with everyday infrastructure, making it easier to think about road maintenance, local planning, and uneven physical vulnerability across urban space.
+From a public policy perspective, this kind of workflow can help identify where environmental constraints overlap with everyday infrastructure, making it easier to think about questions of road maintenance, local planning, and uneven physical vulnerability across urban space.
+
+More broadly, the project reflects an interest in building workflows that make complex spatial information more legible and more usable for applied analysis.
 
 ## Notes
 
